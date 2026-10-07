@@ -7,4 +7,4 @@ const pool = mysql.createPool({
     database: 'library_db',
 })
 
-export default pool;
+export default pool;    
