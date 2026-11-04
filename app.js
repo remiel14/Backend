@@ -1,6 +1,6 @@
 import express from "express";
-import bookRoutes from './roustes/bookRoutes.js';
-import studentRoutes from './roustes/studentRoutes.js';
+import bookRoutes from './routes/bookRoutes.js';
+import studentRoutes from './routes/studentRoutes.js';
 
 const app = express();
 
@@ -11,7 +11,7 @@ try {
     const port = 3000;
 
     app.listen(port, () => {
-        console.log('Listening to port ${port}...');
+        console.log(`Listening to port ${port}...`);
     });
 
 } catch (e) {

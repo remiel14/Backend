@@ -6,9 +6,22 @@ export const fetch = async () =>{
 
 };
 
+//insert
 export const insert = async (student)=>{
-    const[result] = await pool.query("INSERT IN TO student(name, course)VALUES(?,?)",[student.name, student.course]);
+    const[result] = await pool.query("INSERT IN TO student(name, srcode, program) VALUES(?,?)",[student.name, student.srcode, student.program]);
     
     return result.insertId;
     
+}
+
+//update
+export const update = async (studentId, student) => {
+    const[result] = await pool.query("UPDATE student SET name=?, srcode=?, program=? WHERE id=?",[student.name, student.srcode, student.program, studentId]);
+    return result.affectedRows;
+}
+
+//delete
+export const remove = async (id) => {
+    const[result] = await pool.query("DELETE FROM student WHERE id=?",[id]);
+    return result.affectedRows;
 }
